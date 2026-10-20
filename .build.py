@@ -1,7 +1,7 @@
 import sys, pathlib
 out = pathlib.Path(sys.argv[1])
 SITE = "Leonida Report"
-DOMAIN = "https://YOURDOMAIN.com"
+DOMAIN = "https://justincraft135-cpu.github.io/leonida-report"
 NAV = [("index.html","Home"),("news.html","News"),("preorder.html","Preorder"),("fan-zone.html","Fan zone"),("trackers.html","Trackers"),("faq.html","FAQ")]
 
 def page(fname, title, desc, body, hero="", scripts=""):
