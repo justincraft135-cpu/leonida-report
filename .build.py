@@ -1,6 +1,6 @@
 import sys, pathlib
 out = pathlib.Path(sys.argv[1])
-SITE = "6Hub"
+SITE = "ViceCityHub"
 DOMAIN = "https://justincraft135-cpu.github.io/leonida-report"
 NAV = [("index.html","Home"),("news.html","News"),("preorder.html","Preorder"),("fan-zone.html","Fan zone"),("trackers.html","Trackers"),("faq.html","FAQ")]
 
@@ -24,7 +24,7 @@ def page(fname, title, desc, body, hero="", scripts=""):
 </head>
 <body>
 <header class="top"><div class="wrap">
-<a class="logo" href="index.html">6<span>Hub</span></a>
+<a class="logo" href="index.html">ViceCity<span>Hub</span></a>
 <nav class="nav" aria-label="Main">{nav}</nav>
 </div></header>
 {hero}
@@ -74,7 +74,7 @@ HERO = '''<section class="hero"><div class="wrap">
 </div></section>''' + COUNT_JS
 
 pages = {}
-pages["index.html"] = page("index.html", "GTA 6 Release Date Countdown & Launch Guide | 6Hub",
+pages["index.html"] = page("index.html", "GTA 6 Release Date Countdown & Launch Guide | ViceCityHub",
  "GTA 6 releases November 19, 2026 on PS5 and Xbox Series X|S. Live countdown, preload date, platforms and a launch-day checklist.",
  f'''<p class="updated">Updated October 20, 2026</p>
 <h2>Key facts</h2>
@@ -101,7 +101,7 @@ pages["index.html"] = page("index.html", "GTA 6 Release Date Countdown & Launch 
 </ul>
 {AD}''', HERO)
 
-pages["release-date.html"] = page("release-date.html", "When Does GTA 6 Come Out? Release Date & Delays | 6Hub",
+pages["release-date.html"] = page("release-date.html", "When Does GTA 6 Come Out? Release Date & Delays | ViceCityHub",
  "GTA 6 comes out November 19, 2026. Here is the full delay history, preload date and what time it may unlock.",
  f'''<h1>When does GTA 6 come out?</h1>
 <p class="updated">Updated October 20, 2026</p>
@@ -120,7 +120,7 @@ pages["release-date.html"] = page("release-date.html", "When Does GTA 6 Come Out
 <p>No. Rockstar has only announced console versions. Some reports suggest a PC version in early 2027, but nothing is confirmed.</p>
 {AFF}''')
 
-pages["launch-checklist.html"] = page("launch-checklist.html", "GTA 6 Launch Day Checklist: Storage, Preload & Settings | 6Hub",
+pages["launch-checklist.html"] = page("launch-checklist.html", "GTA 6 Launch Day Checklist: Storage, Preload & Settings | ViceCityHub",
  "Get ready for GTA 6 on November 19. Free up storage, set up preloading, pick your edition and prepare your console.",
  f'''<h1>GTA 6 launch-day checklist</h1>
 <p class="updated">Updated October 20, 2026</p>
@@ -142,7 +142,7 @@ pages["launch-checklist.html"] = page("launch-checklist.html", "GTA 6 Launch Day
 <small>Replace the # with your affiliate link.</small>
 </aside>''')
 
-pages["faq.html"] = page("faq.html", "GTA 6 FAQ: PC, Online, Price, Map | 6Hub",
+pages["faq.html"] = page("faq.html", "GTA 6 FAQ: PC, Online, Price, Map | ViceCityHub",
  "Quick answers to the most asked GTA 6 questions: PC version, online mode, platforms, map and characters.",
  f'''<h1>GTA 6 FAQ</h1>
 <p class="updated">Updated October 20, 2026</p>
@@ -155,16 +155,16 @@ pages["faq.html"] = page("faq.html", "GTA 6 FAQ: PC, Online, Price, Map | 6Hub",
 <details><summary>When can I preload GTA 6?</summary><p>Digital preloads open November 12, 2026.</p></details>
 {AD}''')
 
-pages["about.html"] = page("about.html", "About | 6Hub",
- "About 6Hub, an unofficial GTA 6 fan site.",
- '''<h1>About 6Hub</h1>
-<p>6Hub is an independent fan site that collects GTA 6 news, release info and guides in one easy place. We are fans, not Rockstar.</p>
+pages["about.html"] = page("about.html", "About | ViceCityHub",
+ "About ViceCityHub, an unofficial GTA 6 fan site.",
+ '''<h1>About ViceCityHub</h1>
+<p>ViceCityHub is an independent fan site that collects GTA 6 news, release info and guides in one easy place. We are fans, not Rockstar.</p>
 <p>All facts are checked against public reports and Rockstar's own announcements, and each page shows when it was last updated.</p>
 <h2>Contact</h2>
 <p>Email: <strong>you@example.com</strong> (replace with your address)</p>''')
 
-pages["privacy.html"] = page("privacy.html", "Privacy Policy | 6Hub",
- "Privacy policy for 6Hub.",
+pages["privacy.html"] = page("privacy.html", "Privacy Policy | ViceCityHub",
+ "Privacy policy for ViceCityHub.",
  '''<h1>Privacy policy</h1>
 <p class="updated">Effective October 20, 2026</p>
 <p>This site does not ask you to create an account or submit personal information.</p>
@@ -195,7 +195,7 @@ def news_items(limit=None):
         f'<span class="tag tag-{kind.lower()}">{kind}</span> <a class="src" href="{url}" rel="noopener">Source: {sname}</a></li>'
         for d, label, text, kind, url, sname in rows)
 
-pages["news.html"] = page("news.html", "GTA 6 News: Verified Announcements Timeline | 6Hub",
+pages["news.html"] = page("news.html", "GTA 6 News: Verified Announcements Timeline | ViceCityHub",
  "Every confirmed GTA 6 announcement in one timeline, with a source link for each: trailers, delays, preorders and launch date.",
  f'''<h1>Verified GTA 6 announcements</h1>
 <p class="updated">Updated October 20, 2026</p>
@@ -203,7 +203,7 @@ pages["news.html"] = page("news.html", "GTA 6 News: Verified Announcements Timel
 <ul class="timeline">{news_items()}</ul>
 {AD}''')
 
-pages["index.html"] = page("index.html", "GTA 6 Release Date Countdown & Launch Guide | 6Hub",
+pages["index.html"] = page("index.html", "GTA 6 Release Date Countdown & Launch Guide | ViceCityHub",
  "GTA 6 releases November 19, 2026 on PS5 and Xbox Series X|S. Live countdown, verified news, preorder prices, fan polls and launch trackers.",
  f'''<p class="updated">Updated October 20, 2026</p>
 <h2>Key facts</h2>
@@ -240,7 +240,7 @@ STORES = [
 store_rows = "".join(
  f'<tr><th scope="row">{n}</th><td>{f}</td><td><a class="btn btn-sm" href="#" data-aff="{k}" rel="sponsored nofollow noopener">Check price</a></td></tr>'
  for n, f, k in STORES)
-pages["preorder.html"] = page("preorder.html", "GTA 6 Preorder: Prices, Editions & Where to Buy | 6Hub",
+pages["preorder.html"] = page("preorder.html", "GTA 6 Preorder: Prices, Editions & Where to Buy | ViceCityHub",
  "Compare GTA 6 Standard and Ultimate editions and see where to preorder for PS5 and Xbox Series X|S.",
  f'''<h1>GTA 6 preorder comparison</h1>
 <p class="updated">Updated October 20, 2026. Prices change, so confirm at checkout.</p>
@@ -263,7 +263,7 @@ pages["preorder.html"] = page("preorder.html", "GTA 6 Preorder: Prices, Editions
 {AFF}''')
 
 # ---- Fan zone ----
-pages["fan-zone.html"] = page("fan-zone.html", "GTA 6 Fan Polls, Predictions & Rankings | 6Hub",
+pages["fan-zone.html"] = page("fan-zone.html", "GTA 6 Fan Polls, Predictions & Rankings | ViceCityHub",
  "Vote in GTA 6 fan polls, make your launch predictions and rank the features you are most excited about.",
  f'''<h1>Fan zone</h1>
 <p>Vote, predict and rank. Your picks are saved in this browser so you can come back and change them.</p>
@@ -295,7 +295,7 @@ pages["fan-zone.html"] = page("fan-zone.html", "GTA 6 Fan Polls, Predictions & R
 <div id="rank-results"></div>''', scripts='<script src="fan.js"></script>')
 
 # ---- Trackers ----
-pages["trackers.html"] = page("trackers.html", "GTA 6 Trackers: Missions, Vehicles, Collectibles & Locations | 6Hub",
+pages["trackers.html"] = page("trackers.html", "GTA 6 Trackers: Missions, Vehicles, Collectibles & Locations | ViceCityHub",
  "Track your GTA 6 progress. Check off missions, vehicles, collectibles and locations. Progress saves in your browser.",
  f'''<h1>GTA 6 completion trackers</h1>
 <p>Tick items off as you play. Progress saves in this browser. Full lists go up after launch on November 19, 2026.</p>
