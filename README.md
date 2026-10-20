@@ -1,4 +1,4 @@
-# Leonida Report: GTA 6 fan site
+# 6Hub: GTA 6 fan site
 
 Plain HTML + CSS. No build step. Edit any `.html` file in a text editor.
 
