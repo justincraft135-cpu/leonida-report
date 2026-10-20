@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GTA 6 Fan Polls, Predictions & Rankings | Leonida Report</title>
+<meta name="description" content="Vote in GTA 6 fan polls, make your launch predictions and rank the features you are most excited about.">
+<link rel="canonical" href="https://YOURDOMAIN.com/fan-zone.html">
+<meta property="og:title" content="GTA 6 Fan Polls, Predictions & Rankings | Leonida Report">
+<meta property="og:description" content="Vote in GTA 6 fan polls, make your launch predictions and rank the features you are most excited about.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Work+Sans:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+<!-- ADSENSE: after approval, paste your AdSense <script> tag here. -->
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a class="logo" href="index.html">Leonida<span>Report</span></a>
+<nav class="nav" aria-label="Main"><a href="index.html">Home</a><a href="news.html">News</a><a href="preorder.html">Preorder</a><a href="fan-zone.html" aria-current="page">Fan zone</a><a href="trackers.html">Trackers</a><a href="faq.html">FAQ</a></nav>
+</div></header>
+
+<main><div class="wrap">
+<h1>Fan zone</h1>
+<p>Vote, predict and rank. Your picks are saved in this browser so you can come back and change them.</p>
+<p class="note" id="fan-mode"></p>
+<h2>Polls</h2>
+<div id="polls" class="stack"></div>
+<div class="ad">Ad space &middot; paste your ad unit code here</div>
+<h2>Predictions</h2>
+<form id="predict" class="panel stack">
+<label for="p-score">Metacritic score <output id="p-score-out" class="num">95</output></label>
+<input type="range" id="p-score" name="score" min="70" max="100" value="95">
+<label for="p-sales">Copies sold in the first week (millions)</label>
+<input type="number" id="p-sales" name="sales" min="0" max="200" step="1" value="25" inputmode="numeric">
+<label for="p-online">When will GTA 6 Online launch?</label>
+<select id="p-online" name="online">
+<option>Before end of 2026</option><option>Early 2027</option><option>Mid 2027</option><option>Late 2027 or later</option>
+</select>
+<label for="p-pc">When will the PC version come out?</label>
+<select id="p-pc" name="pc">
+<option>Early 2027</option><option>Late 2027</option><option>2028 or later</option>
+</select>
+<button type="submit" class="btn">Lock in my predictions</button>
+<p id="predict-msg" class="note" role="status"></p>
+</form>
+<h2>Community ranking: most hyped feature</h2>
+<p>Put these in order, top is the one you care about most.</p>
+<ol id="rank" class="rank"></ol>
+<p id="rank-msg" class="note" role="status"></p>
+<div id="rank-results"></div>
+</div></main>
+<footer><div class="wrap">
+<nav aria-label="Footer"><a href="release-date.html">Release date</a><a href="launch-checklist.html">Launch checklist</a><a href="about.html">About</a><a href="privacy.html">Privacy policy</a><a href="faq.html">FAQ</a></nav>
+<p>Leonida Report is an unofficial fan site. It is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. Grand Theft Auto and GTA are trademarks of Take-Two Interactive. Some links may be affiliate links, which means we may earn a small commission at no cost to you.</p>
+</div></footer>
+<script src="fan.js"></script>
+</body>
+</html>
