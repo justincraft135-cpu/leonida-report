@@ -4,7 +4,7 @@ Plain HTML + CSS. No build step. Edit any `.html` file in a text editor.
 
 ## Before you go live (5 min)
 1. The site lives at https://vicehub.city (domain at Porkbun, hosted free on GitHub Pages).
-2. Replace `you@example.com` in `about.html` and `privacy.html`.
+2. Contact email is contact@vicehub.city (Porkbun forwards it to your Gmail).
 3. Replace each `href="#"` that has `rel="sponsored"` with your affiliate link. On `preorder.html` each store button has a label like `data-aff="amazon"` so you know which link goes where.
 
 ## Features

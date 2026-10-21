@@ -161,7 +161,7 @@ pages["about.html"] = page("about.html", "About | ViceHub",
 <p>ViceHub is an independent fan site that collects GTA 6 news, release info and guides in one easy place. We are fans, not Rockstar.</p>
 <p>All facts are checked against public reports and Rockstar's own announcements, and each page shows when it was last updated.</p>
 <h2>Contact</h2>
-<p>Email: <strong>you@example.com</strong> (replace with your address)</p>''')
+<p>Email: <strong>contact@vicehub.city</strong></p>''')
 
 pages["privacy.html"] = page("privacy.html", "Privacy Policy | ViceHub",
  "Privacy policy for ViceHub.",
@@ -175,7 +175,7 @@ pages["privacy.html"] = page("privacy.html", "Privacy Policy | ViceHub",
 <h2>Analytics</h2>
 <p>We may use privacy-friendly analytics to count visits. This data is not used to identify you.</p>
 <h2>Contact</h2>
-<p>Questions? Email you@example.com.</p>''')
+<p>Questions? Email contact@vicehub.city.</p>''')
 
 
 # ---- Verified announcements ----
