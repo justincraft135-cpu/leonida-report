@@ -176,3 +176,32 @@ button.btn { border: 0; cursor: pointer; font: inherit; font-weight: 700; justif
 .empty p { margin: 6px 0 0; color: var(--muted); }
 #t-search { margin-bottom: 8px; }
 .affiliate .btn { margin-right: 8px; }
+
+/* Vice City backdrop: original striped sunset sun, skyline and palm silhouettes (scene.svg). */
+body {
+  background:
+    radial-gradient(ellipse 80% 40% at 50% 0%, rgba(255, 63, 164, .16), transparent 70%),
+    radial-gradient(ellipse 60% 35% at 50% 100%, rgba(46, 230, 197, .10), transparent 70%),
+    var(--night);
+  background-attachment: fixed;
+}
+body::after {
+  content: ""; position: fixed; inset: auto 0 0 0; height: 220px; z-index: -1; pointer-events: none;
+  background: url("scene.svg?v=1") center bottom / auto 100% repeat-x; opacity: .22;
+}
+.hero { position: relative; overflow: hidden; isolation: isolate; }
+.hero::before {
+  content: ""; position: absolute; z-index: -1; right: 6%; bottom: 40px;
+  width: min(42vw, 320px); aspect-ratio: 1; border-radius: 50%;
+  background: linear-gradient(180deg, #ffe56b 0%, #ff9a4d 45%, #ff3fa4 100%);
+  -webkit-mask: linear-gradient(#000 50%, transparent 50%), repeating-linear-gradient(180deg, #000 0 12px, transparent 12px 19px);
+  mask: linear-gradient(#000 50%, transparent 50%), repeating-linear-gradient(180deg, #000 0 12px, transparent 12px 19px);
+  opacity: .85; filter: drop-shadow(0 0 40px rgba(255, 63, 164, .6));
+}
+.hero::after {
+  content: ""; position: absolute; z-index: -1; inset: auto 0 0 0; height: 150px; pointer-events: none;
+  background: url("scene.svg?v=1") center bottom / auto 100% repeat-x;
+}
+.hero .wrap { position: relative; padding-bottom: 120px; }
+.hero h1, .hero p.lede { text-shadow: 0 2px 12px rgba(18, 15, 36, .55); }
+@media (max-width: 600px) { .hero::after { height: 110px; } .hero .wrap { padding-bottom: 90px; } .hero::before { bottom: 30px; } }
