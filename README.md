@@ -1,9 +1,9 @@
-# ViceCityHub: GTA 6 fan site
+# ViceHub: GTA 6 fan site
 
 Plain HTML + CSS. No build step. Edit any `.html` file in a text editor.
 
 ## Before you go live (5 min)
-1. Links in the pages and `sitemap.xml` point to the GitHub Pages address. When you buy a domain, find and replace `justincraft135-cpu.github.io/leonida-report` with it.
+1. The site lives at https://vicehub.city (domain at Porkbun, hosted free on GitHub Pages).
 2. Replace `you@example.com` in `about.html` and `privacy.html`.
 3. Replace each `href="#"` that has `rel="sponsored"` with your affiliate link. On `preorder.html` each store button has a label like `data-aff="amazon"` so you know which link goes where.
 
