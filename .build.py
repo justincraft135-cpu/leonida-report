@@ -40,7 +40,7 @@ def page(fname, title, desc, body, hero="", scripts=""):
 </html>
 '''
 
-AD = '<div class="ad">Ad space &middot; paste your ad unit code here</div>'
+AD = ''  # AdSense Auto ads places ads itself; no visible placeholder boxes
 AFF = '''<aside class="affiliate">
 <p><strong>Not pre-ordered yet?</strong> Compare prices on the standard edition for PS5 and Xbox Series X|S.</p>
 <a class="btn" href="https://www.amazon.com/s?k=grand+theft+auto+vi+ps5&amp;tag=vicehub01-20" rel="sponsored nofollow noopener">PS5 price on Amazon</a>
