@@ -20,7 +20,7 @@ def page(fname, title, desc, body, hero="", scripts=""):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Work+Sans:wght@400;600;700&display=swap">
 <link rel="stylesheet" href="style.css?v=2">
-<!-- ADSENSE: after approval, paste your AdSense <script> tag here. -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5385328860791776" crossorigin="anonymous"></script>
 </head>
 <body>
 <header class="top"><div class="wrap">
@@ -396,4 +396,4 @@ for name, html in pages.items():
 (out / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {DOMAIN}/sitemap.xml\n")
 urls = "".join(f"  <url><loc>{DOMAIN}/{'' if n=='index.html' else n}</loc><lastmod>2026-10-21</lastmod></url>\n" for n in pages)
 (out / "sitemap.xml").write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}</urlset>\n')
-(out / "ads.txt").write_text("# After AdSense approval, replace this line with the ads.txt line Google gives you, e.g.:\n# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0\n")
+(out / "ads.txt").write_text("google.com, pub-5385328860791776, DIRECT, f08c47fec0942fa0\n")
