@@ -3,7 +3,7 @@ import sys, pathlib
 out = pathlib.Path(sys.argv[1])
 SITE = "ViceHub"
 DOMAIN = "https://vicehub.city"
-NAV = [("index.html","Home"),("news.html","News"),("preorder.html","Preorder"),("fan-zone.html","Fan zone"),("trackers.html","Trackers"),("faq.html","FAQ")]
+NAV = [("index.html","Home"),("news.html","News"),("preorder.html","Preorder"),("fan-zone.html","Fan zone"),("trackers.html","Trackers"),("trailers.html","Trailers"),("faq.html","FAQ")]
 
 def boxed(body):
     # Each top-level h2 starts a new animated box; the intro before the first h2 gets its own box.
@@ -25,7 +25,7 @@ def page(fname, title, desc, body, hero="", scripts=""):
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Work+Sans:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5385328860791776" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -99,6 +99,7 @@ pages["index.html"] = page("index.html", "GTA 6 Release Date Countdown & Launch 
 <li><a href="release-date.html">GTA 6 release date and delay history</a><p>Every date Rockstar has announced, and what changed.</p></li>
 <li><a href="launch-checklist.html">Launch-day checklist</a><p>Storage, preloading, editions and settings to sort out now.</p></li>
 <li><a href="faq.html">GTA 6 FAQ</a><p>PC version, online mode, price and more.</p></li>
+<li><a href="trailers.html">Every GTA 6 trailer</a><p>Watch the launch trailer and all official videos.</p></li>
 <li><a href="gta-6-file-size.html">GTA 6 file size</a><p>How many GB you need on PS5 and Xbox.</p></li>
 <li><a href="gta-6-map-size.html">GTA 6 map size</a><p>How big Leonida is compared to GTA 5.</p></li>
 <li><a href="gta-6-characters.html">GTA 6 characters</a><p>Lucia, Jason and the full confirmed cast.</p></li>
@@ -235,6 +236,28 @@ pages["gta-6-characters.html"] = page("gta-6-characters.html", "GTA 6 Characters
 {AFF}
 <p class="note">Sources: <a href="https://www.videogameschronicle.com/news/gta-6s-cast-of-characters-revealed/" rel="noopener">VGC</a>, <a href="https://www.pcgamesn.com/grand-theft-auto-6/characters" rel="noopener">PCGamesN</a>, <a href="https://www.rockstargames.com/VI" rel="noopener">Rockstar Games</a>.</p>''')
 
+pages["trailers.html"] = page("trailers.html", "GTA 6 Trailers: Every Official Trailer in One Place | ViceHub",
+ "Watch every official GTA 6 trailer from Rockstar Games: the launch trailer, An Extended Look, Trailer 2 and Trailer 1.",
+ f'''<h1>Every official GTA 6 trailer</h1>
+<p>All videos below are played straight from <a href="https://www.youtube.com/@RockstarGames" rel="noopener">Rockstar Games' official YouTube channel</a>. Newest first.</p>
+<h2>Launch Trailer</h2>
+<p class="updated">Released October 15, 2026</p>
+<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/rz1B4B2yBZY" title="Grand Theft Auto VI Launch Trailer (Rockstar Games on YouTube)" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<p>The final trailer before launch, with the song "Flower in a Hurricane".</p>
+<h2>An Extended Look</h2>
+<p class="updated">Released August 27, 2026</p>
+<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/tJbzMqJGH4k" title="Grand Theft Auto VI An Extended Look (Rockstar Games on YouTube)" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<p>A 26-minute look at the world, story and gameplay.</p>
+<h2>Trailer 2</h2>
+<p class="updated">Released May 6, 2025</p>
+<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/VQRLujxTm3c" title="Grand Theft Auto VI Trailer 2 (Rockstar Games on YouTube)" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<p>Lucia and Jason's story, captured in-game on PS5.</p>
+<h2>Trailer 1</h2>
+<p class="updated">Released December 2023</p>
+<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/QdBZY2fkU-0" title="Grand Theft Auto VI Trailer 1 (Rockstar Games on YouTube)" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<p>The first reveal of Lucia and Vice City.</p>
+{AFF}''')
+
 pages["faq.html"] = page("faq.html", "GTA 6 FAQ: PC, Online, Price, Map | ViceHub",
  "Quick answers to the most asked GTA 6 questions: PC version, online mode, platforms, map and characters.",
  f'''<h1>GTA 6 FAQ</h1>
@@ -263,6 +286,7 @@ pages["privacy.html"] = page("privacy.html", "Privacy Policy | ViceHub",
 <p>This site does not ask you to create an account or submit personal information.</p>
 <h2>Advertising</h2>
 <p>We may use third-party advertising companies, such as Google AdSense, to show ads. These companies may use cookies to show ads based on your visits to this and other websites. Google's use of advertising cookies lets it and its partners serve ads based on your visits. You can opt out of personalized advertising at <a href="https://adssettings.google.com">Google Ad Settings</a>.</p>
+<p>Our trailers page shows videos from YouTube in privacy-enhanced mode (youtube-nocookie.com). YouTube may set cookies when you play a video, under <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</p>
 <h2>Affiliate links</h2>
 <p>Some links are affiliate links. If you buy through them we may earn a commission at no extra cost to you. As an Amazon Associate, ViceHub earns from qualifying purchases.</p>
 <h2>Analytics</h2>
