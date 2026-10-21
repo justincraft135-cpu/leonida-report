@@ -1,8 +1,14 @@
+import re
 import sys, pathlib
 out = pathlib.Path(sys.argv[1])
 SITE = "ViceHub"
 DOMAIN = "https://vicehub.city"
 NAV = [("index.html","Home"),("news.html","News"),("preorder.html","Preorder"),("fan-zone.html","Fan zone"),("trackers.html","Trackers"),("faq.html","FAQ")]
+
+def boxed(body):
+    # Each top-level h2 starts a new animated box; the intro before the first h2 gets its own box.
+    parts = [x.strip() for x in re.split(r'(?m)^(?=<h2)', body) if x.strip()]
+    return "\n".join(f'<section class="box">\n{x}\n</section>' for x in parts)
 
 def page(fname, title, desc, body, hero="", scripts=""):
     nav = "".join(f'<a href="{h}"{" aria-current=\"page\"" if h==fname else ""}>{t}</a>' for h,t in NAV)
@@ -19,7 +25,7 @@ def page(fname, title, desc, body, hero="", scripts=""):
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Work+Sans:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=4">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5385328860791776" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -29,12 +35,13 @@ def page(fname, title, desc, body, hero="", scripts=""):
 </div></header>
 {hero}
 <main><div class="wrap">
-{body}
+{boxed(body)}
 </div></main>
 <footer><div class="wrap">
 <nav aria-label="Footer"><a href="release-date.html">Release date</a><a href="launch-checklist.html">Launch checklist</a><a href="gta-6-file-size.html">File size</a><a href="gta-6-map-size.html">Map size</a><a href="gta-6-characters.html">Characters</a><a href="about.html">About</a><a href="privacy.html">Privacy policy</a><a href="faq.html">FAQ</a></nav>
 <p>{SITE} is an unofficial fan site. It is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. Grand Theft Auto and GTA are trademarks of Take-Two Interactive. Some links are affiliate links, which means we may earn a small commission at no cost to you. As an Amazon Associate, ViceHub earns from qualifying purchases.</p>
 </div></footer>
+<script src="box.js?v=1"></script>
 {scripts}
 </body>
 </html>

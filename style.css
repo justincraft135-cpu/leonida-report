@@ -205,3 +205,18 @@ body::after {
 .hero .wrap { position: relative; padding-bottom: 120px; }
 .hero h1, .hero p.lede { text-shadow: 0 2px 12px rgba(18, 15, 36, .55); }
 @media (max-width: 600px) { .hero::after { height: 110px; } .hero .wrap { padding-bottom: 90px; } .hero::before { bottom: 30px; } }
+
+/* Animated section boxes (box.js scales them by distance from the middle of the screen). */
+.box {
+  background: color-mix(in srgb, var(--panel) 88%, transparent);
+  border: 1px solid var(--line); border-radius: 14px;
+  padding: 22px 22px 18px; margin: 0 0 24px;
+  transform-origin: center; will-change: transform, opacity;
+  transition: transform .25s ease-out, opacity .25s ease-out, box-shadow .4s, border-color .4s;
+  backdrop-filter: blur(3px);
+}
+.box.near { border-color: color-mix(in srgb, var(--magenta) 55%, var(--line)); box-shadow: 0 0 0 1px rgba(255, 63, 164, .25), 0 10px 40px rgba(255, 63, 164, .18); }
+.box > :first-child { margin-top: 0; }
+.box > :last-child { margin-bottom: 0; }
+.box .cards li, .box .panel, .box .affiliate { background: color-mix(in srgb, var(--night) 70%, transparent); }
+@media (max-width: 600px) { .box { padding: 18px 16px 14px; margin-bottom: 18px; } }

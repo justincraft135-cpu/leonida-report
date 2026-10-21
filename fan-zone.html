@@ -11,7 +11,7 @@
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Work+Sans:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=4">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5385328860791776" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -21,12 +21,16 @@
 </div></header>
 
 <main><div class="wrap">
+<section class="box">
 <h1>Fan zone</h1>
 <p>Vote, predict and rank. Your picks are saved in this browser so you can come back and change them.</p>
 <p class="note" id="fan-mode"></p>
+</section>
+<section class="box">
 <h2>Polls</h2>
 <div id="polls" class="stack"></div>
-
+</section>
+<section class="box">
 <h2>Predictions</h2>
 <form id="predict" class="panel stack">
 <label for="p-score">Metacritic score <output id="p-score-out" class="num">95</output></label>
@@ -44,16 +48,20 @@
 <button type="submit" class="btn">Lock in my predictions</button>
 <p id="predict-msg" class="note" role="status"></p>
 </form>
+</section>
+<section class="box">
 <h2>Community ranking: most hyped feature</h2>
 <p>Put these in order, top is the one you care about most.</p>
 <ol id="rank" class="rank"></ol>
 <p id="rank-msg" class="note" role="status"></p>
 <div id="rank-results"></div>
+</section>
 </div></main>
 <footer><div class="wrap">
 <nav aria-label="Footer"><a href="release-date.html">Release date</a><a href="launch-checklist.html">Launch checklist</a><a href="gta-6-file-size.html">File size</a><a href="gta-6-map-size.html">Map size</a><a href="gta-6-characters.html">Characters</a><a href="about.html">About</a><a href="privacy.html">Privacy policy</a><a href="faq.html">FAQ</a></nav>
 <p>ViceHub is an unofficial fan site. It is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. Grand Theft Auto and GTA are trademarks of Take-Two Interactive. Some links are affiliate links, which means we may earn a small commission at no cost to you. As an Amazon Associate, ViceHub earns from qualifying purchases.</p>
 </div></footer>
+<script src="box.js?v=1"></script>
 <script src="fan.js?v=2"></script>
 </body>
 </html>
