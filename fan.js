@@ -4,8 +4,8 @@
  * To show shared results from all visitors, create a free Supabase project,
  * run supabase-setup.sql from the README, then fill in the two values below.
  */
-var SUPABASE_URL = "";      // e.g. "https://abcd1234.supabase.co"
-var SUPABASE_ANON_KEY = ""; // the public "anon" key, safe to put in the page
+var SUPABASE_URL = "https://zxbzfjspazdekmbpufuo.supabase.co";
+var SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp4YnpmanNwYXpkZWttYnB1ZnVvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI1NDIxNTYsImV4cCI6MjEwODExODE1Nn0.cSytMrYFhGAgsVrd156XzJu9pokC3PC_azEZFppKyBU"; // public key, safe in the page
 
 var POLLS = [
   { id: "protagonist", q: "Who are you more excited to play as?", a: ["Lucia", "Jason", "Both equally"] },
