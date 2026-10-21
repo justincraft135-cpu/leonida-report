@@ -32,7 +32,7 @@ def page(fname, title, desc, body, hero="", scripts=""):
 {body}
 </div></main>
 <footer><div class="wrap">
-<nav aria-label="Footer"><a href="release-date.html">Release date</a><a href="launch-checklist.html">Launch checklist</a><a href="about.html">About</a><a href="privacy.html">Privacy policy</a><a href="faq.html">FAQ</a></nav>
+<nav aria-label="Footer"><a href="release-date.html">Release date</a><a href="launch-checklist.html">Launch checklist</a><a href="gta-6-file-size.html">File size</a><a href="gta-6-map-size.html">Map size</a><a href="gta-6-characters.html">Characters</a><a href="about.html">About</a><a href="privacy.html">Privacy policy</a><a href="faq.html">FAQ</a></nav>
 <p>{SITE} is an unofficial fan site. It is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. Grand Theft Auto and GTA are trademarks of Take-Two Interactive. Some links are affiliate links, which means we may earn a small commission at no cost to you. As an Amazon Associate, ViceHub earns from qualifying purchases.</p>
 </div></footer>
 {scripts}
@@ -92,6 +92,9 @@ pages["index.html"] = page("index.html", "GTA 6 Release Date Countdown & Launch 
 <li><a href="release-date.html">GTA 6 release date and delay history</a><p>Every date Rockstar has announced, and what changed.</p></li>
 <li><a href="launch-checklist.html">Launch-day checklist</a><p>Storage, preloading, editions and settings to sort out now.</p></li>
 <li><a href="faq.html">GTA 6 FAQ</a><p>PC version, online mode, price and more.</p></li>
+<li><a href="gta-6-file-size.html">GTA 6 file size</a><p>How many GB you need on PS5 and Xbox.</p></li>
+<li><a href="gta-6-map-size.html">GTA 6 map size</a><p>How big Leonida is compared to GTA 5.</p></li>
+<li><a href="gta-6-characters.html">GTA 6 characters</a><p>Lucia, Jason and the full confirmed cast.</p></li>
 </ul>
 {AFF}
 <h2>Latest news</h2>
@@ -141,6 +144,89 @@ pages["launch-checklist.html"] = page("launch-checklist.html", "GTA 6 Launch Day
 <a class="btn" href="https://www.amazon.com/s?k=ps5+2tb+nvme+ssd+heatsink&amp;tag=vicehub01-20" rel="sponsored nofollow noopener">See PS5 SSDs on Amazon</a>
 <a class="btn" href="https://www.amazon.com/s?k=gaming+headset+ps5+xbox&amp;tag=vicehub01-20" rel="sponsored nofollow noopener">See gaming headsets</a>
 </aside>''')
+
+pages["gta-6-file-size.html"] = page("gta-6-file-size.html", "GTA 6 File Size: How Many GB on PS5 and Xbox? | ViceHub",
+ "How much storage GTA 6 needs on PS5 and Xbox Series X|S. What is confirmed, what is estimated, and how to make room before preload.",
+ f'''<h1>GTA 6 file size: how much space do you need?</h1>
+<p class="updated">Updated October 21, 2026</p>
+<p><strong>Rockstar has not announced the official file size yet.</strong> Most estimates put GTA 6 at around 150 to 200 GB, and a day-one patch could add more. To be safe, plan on clearing about 250 GB before preloads open on November 12, 2026.</p>
+{AD}
+<h2>What we know</h2>
+<dl class="facts">
+<dt>Official size</dt><dd>Not announced. It should show on the PlayStation Store and Microsoft Store listings once preloads open.</dd>
+<dt>Estimates</dt><dd>About 150 to 200 GB for the base game, possibly 200 to 250 GB with the day-one patch.</dd>
+<dt>Preload date</dt><dd>November 12, 2026 (digital copies)</dd>
+<dt>Physical copies</dt><dd>Expect a large install and a download even with a disc or code in a box.</dd>
+</dl>
+<h2>Is the 676 GB Xbox screenshot real?</h2>
+<p>No. A screenshot showing GTA 6 at about 677 GB spread on social media, but several sites have called it fake. Neither Rockstar nor Microsoft has posted a size.</p>
+<h2>Will it fit on my console?</h2>
+<p>A PS5 or Xbox Series X has roughly 667 GB of usable space, so GTA 6 will fit, but you may need to delete a few big games first. The Xbox Series S has much less space (about 364 GB usable), so Series S owners will almost certainly need to clear room or add storage.</p>
+<h2>How to make room</h2>
+<ul class="check">
+<li><strong>Delete games you finished.</strong> Your saves stay in the cloud or on the console, so you can reinstall later.</li>
+<li><strong>Move older games to a USB drive.</strong> PS5 and Xbox can store last-gen games on cheap external drives.</li>
+<li><strong>Add an internal SSD.</strong> On PS5, an M.2 NVMe SSD with a heatsink works. On Xbox, use an official Seagate or WD expansion card.</li>
+</ul>
+<aside class="affiliate">
+<p><strong>Need more space?</strong> A 2TB drive gives you room for GTA 6 and the rest of your library.</p>
+<a class="btn" href="https://www.amazon.com/s?k=ps5+2tb+nvme+ssd+heatsink&amp;tag=vicehub01-20" rel="sponsored nofollow noopener">PS5 SSDs on Amazon</a>
+<a class="btn" href="https://www.amazon.com/s?k=xbox+series+x+storage+expansion+card&amp;tag=vicehub01-20" rel="sponsored nofollow noopener">Xbox expansion cards</a>
+</aside>
+<p class="note">Sources: estimates gathered from <a href="https://sportskeeda.com/gta/gta-6-will-take-200gb-storage-space-ps5-xbox-series-x-s-rumor-explored" rel="noopener">Sportskeeda</a> and other fan coverage. We will update this page as soon as the store listings show the real size. See also the <a href="launch-checklist.html">launch-day checklist</a>.</p>''')
+
+pages["gta-6-map-size.html"] = page("gta-6-map-size.html", "GTA 6 Map Size: How Big Is Leonida vs GTA 5? | ViceHub",
+ "How big is the GTA 6 map? Rockstar says Leonida is about twice the size of GTA 5. Every region, plus fan size estimates.",
+ f'''<h1>How big is the GTA 6 map?</h1>
+<p class="updated">Updated October 21, 2026</p>
+<p><strong>Rockstar says Leonida is about twice the size of GTA 5's map</strong> and its biggest world ever. It has not given an exact size in square miles.</p>
+{AD}
+<h2>Official vs estimated</h2>
+<dl class="facts">
+<dt>Official</dt><dd>About 2 times GTA 5, according to Rockstar's Aaron Garbut in a Game Informer preview</dd>
+<dt>Fan estimates</dt><dd>Roughly 2.4 to 2.7 times GTA 5, based on community mapping projects</dd>
+<dt>GTA 5 for reference</dt><dd>Around 49 square miles (about 75 to 80 square km)</dd>
+</dl>
+<p>Fan estimates come from people measuring trailer footage, so treat them as rough. The official "about twice" is the number to trust until the game is out.</p>
+<h2>Regions of Leonida</h2>
+<p>Leonida is Rockstar's take on Florida. These areas have been shown in trailers and on Rockstar's site:</p>
+<ul class="cards">
+<li><strong>Vice City</strong><p>The neon city based on Miami, with beaches, nightlife and the port.</p></li>
+<li><strong>Leonida Keys</strong><p>A chain of islands to the south, like the Florida Keys.</p></li>
+<li><strong>Grassrivers</strong><p>Swamps and wetlands inspired by the Everglades, full of wildlife.</p></li>
+<li><strong>Port Gellhorn</strong><p>A run-down beach town on the coast.</p></li>
+<li><strong>Ambrosia</strong><p>A farming and industrial area with a big sugar refinery.</p></li>
+<li><strong>Mount Kalaga National Park</strong><p>Forests, trails and outdoor activities in the north.</p></li>
+</ul>
+<h2>Can you explore everything on day one?</h2>
+<p>Rockstar has not said whether parts of the map are locked at the start. Track every area you visit with our <a href="trackers.html#locations">locations tracker</a>.</p>
+{AFF}
+<p class="note">Sources: <a href="https://www.forbes.com/sites/brianmazique/2026/10/06/gta-6s-map-is-about-twice-the-size-of-gta-5-with-hurricanes-and-170-animal-species/" rel="noopener">Forbes</a>, <a href="https://insider-gaming.com/gta-6-map-size-revealed/" rel="noopener">Insider Gaming</a>, <a href="https://sportskeeda.com/gta/news-gta-6-mapping-project-hints-2-55x-bigger-map-gta-5-report" rel="noopener">Sportskeeda</a>.</p>''')
+
+pages["gta-6-characters.html"] = page("gta-6-characters.html", "GTA 6 Characters: Lucia, Jason and the Full Cast | ViceHub",
+ "Meet the GTA 6 characters: protagonists Lucia Caminos and Jason Duval, plus every other character Rockstar has confirmed.",
+ f'''<h1>GTA 6 characters: who is in the game?</h1>
+<p class="updated">Updated October 21, 2026</p>
+<p>GTA 6 has <strong>two playable main characters, Lucia Caminos and Jason Duval</strong>, a couple drawn into crime together in the state of Leonida. Lucia is the series' first female lead in the modern era.</p>
+{AD}
+<h2>Lucia Caminos</h2>
+<p>Lucia grew up with her mother's dream of a better life, first in Liberty City and then in Leonida. She spent time in prison, and now she is out and determined to take what she wants instead of waiting for it.</p>
+<h2>Jason Duval</h2>
+<p>Jason had a rough childhood, then joined the Army to get away from it. After leaving, he ended up in the Leonida Keys working for local drug runners. Meeting Lucia could be the best or worst thing that ever happened to him.</p>
+<h2>Other confirmed characters</h2>
+<ul class="cards">
+<li><strong>Cal Hampton</strong><p>Jason's friend, a conspiracy theorist who listens in on police radio.</p></li>
+<li><strong>Boobie Ike</strong><p>A Vice City local with a strip club, a studio and other businesses.</p></li>
+<li><strong>Dre'Quan Priest</strong><p>A music manager who runs a record label with Boobie.</p></li>
+<li><strong>Real Dimez</strong><p>A rap duo signed to Dre'Quan and Boobie's label.</p></li>
+<li><strong>Raul Bautista</strong><p>An experienced bank robber who looks for new partners.</p></li>
+<li><strong>Brian Heder</strong><p>A drug runner in the Keys who gives Jason work and a place to stay.</p></li>
+</ul>
+<h2>Can you switch between Lucia and Jason?</h2>
+<p>Rockstar has shown both characters but has not fully explained how switching works. GTA 5 let you swap between three characters, so many fans expect something similar.</p>
+<p>Who are you more excited to play as? <a href="fan-zone.html">Vote in our fan poll</a>.</p>
+{AFF}
+<p class="note">Sources: <a href="https://www.videogameschronicle.com/news/gta-6s-cast-of-characters-revealed/" rel="noopener">VGC</a>, <a href="https://www.pcgamesn.com/grand-theft-auto-6/characters" rel="noopener">PCGamesN</a>, <a href="https://www.rockstargames.com/VI" rel="noopener">Rockstar Games</a>.</p>''')
 
 pages["faq.html"] = page("faq.html", "GTA 6 FAQ: PC, Online, Price, Map | ViceHub",
  "Quick answers to the most asked GTA 6 questions: PC version, online mode, platforms, map and characters.",
@@ -308,6 +394,6 @@ pages["trackers.html"] = page("trackers.html", "GTA 6 Trackers: Missions, Vehicl
 for name, html in pages.items():
     (out / name).write_text(html)
 (out / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {DOMAIN}/sitemap.xml\n")
-urls = "".join(f"  <url><loc>{DOMAIN}/{'' if n=='index.html' else n}</loc><lastmod>2026-10-20</lastmod></url>\n" for n in pages)
+urls = "".join(f"  <url><loc>{DOMAIN}/{'' if n=='index.html' else n}</loc><lastmod>2026-10-21</lastmod></url>\n" for n in pages)
 (out / "sitemap.xml").write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}</urlset>\n')
 (out / "ads.txt").write_text("# After AdSense approval, replace this line with the ads.txt line Google gives you, e.g.:\n# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0\n")
