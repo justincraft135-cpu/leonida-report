@@ -292,7 +292,7 @@ pages["fan-zone.html"] = page("fan-zone.html", "GTA 6 Fan Polls, Predictions & R
 <p>Put these in order, top is the one you care about most.</p>
 <ol id="rank" class="rank"></ol>
 <p id="rank-msg" class="note" role="status"></p>
-<div id="rank-results"></div>''', scripts='<script src="fan.js"></script>')
+<div id="rank-results"></div>''', scripts='<script src="fan.js?v=2"></script>')
 
 # ---- Trackers ----
 pages["trackers.html"] = page("trackers.html", "GTA 6 Trackers: Missions, Vehicles, Collectibles & Locations | ViceHub",
