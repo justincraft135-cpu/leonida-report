@@ -239,21 +239,21 @@ pages["gta-6-characters.html"] = page("gta-6-characters.html", "GTA 6 Characters
 pages["trailers.html"] = page("trailers.html", "GTA 6 Trailers: Every Official Trailer in One Place | ViceHub",
  "Watch every official GTA 6 trailer from Rockstar Games: the launch trailer, An Extended Look, Trailer 2 and Trailer 1.",
  f'''<h1>Every official GTA 6 trailer</h1>
-<p>All videos below are played straight from <a href="https://www.youtube.com/@RockstarGames" rel="noopener">Rockstar Games' official YouTube channel</a>. Newest first.</p>
-<h2>Launch Trailer</h2>
-<p class="updated">Released October 15, 2026</p>
-<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/rz1B4B2yBZY" title="Grand Theft Auto VI Launch Trailer (Rockstar Games on YouTube)" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-<p>The final trailer before launch, with the song "Flower in a Hurricane".</p>
-<h2>An Extended Look</h2>
-<p class="updated">Released August 27, 2026</p>
-<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/tJbzMqJGH4k" title="Grand Theft Auto VI An Extended Look (Rockstar Games on YouTube)" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-<p>A 26-minute look at the world, story and gameplay.</p>
+<p>All videos below are played straight from <a href="https://www.youtube.com/@RockstarGames" rel="noopener">Rockstar Games' official YouTube channel</a>. Oldest first, newest at the bottom.</p>
+<h2>Trailer 1</h2>
+<p class="updated">Released December 2023</p>
 <h2>Trailer 2</h2>
 <p class="updated">Released May 6, 2025</p>
 <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/VQRLujxTm3c" title="Grand Theft Auto VI Trailer 2 (Rockstar Games on YouTube)" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 <p>Lucia and Jason's story, captured in-game on PS5.</p>
-<h2>Trailer 1</h2>
-<p class="updated">Released December 2023</p>
+<h2>An Extended Look</h2>
+<p class="updated">Released August 27, 2026</p>
+<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/tJbzMqJGH4k" title="Grand Theft Auto VI An Extended Look (Rockstar Games on YouTube)" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<p>A 26-minute look at the world, story and gameplay.</p>
+<h2>Launch Trailer</h2>
+<p class="updated">Released October 15, 2026</p>
+<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/rz1B4B2yBZY" title="Grand Theft Auto VI Launch Trailer (Rockstar Games on YouTube)" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<p>The final trailer before launch, with the song "Flower in a Hurricane".</p>
 <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/QdBZY2fkU-0" title="Grand Theft Auto VI Trailer 1 (Rockstar Games on YouTube)" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 <p>The first reveal of Lucia and Vice City.</p>
 {AFF}''')
