@@ -175,3 +175,4 @@ button.btn { border: 0; cursor: pointer; font: inherit; font-weight: 700; justif
 .tlist input:checked + label strong { text-decoration: line-through; color: var(--muted); }
 .empty p { margin: 6px 0 0; color: var(--muted); }
 #t-search { margin-bottom: 8px; }
+.affiliate .btn { margin-right: 8px; }

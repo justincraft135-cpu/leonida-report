@@ -19,7 +19,7 @@ def page(fname, title, desc, body, hero="", scripts=""):
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Work+Sans:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=2">
 <!-- ADSENSE: after approval, paste your AdSense <script> tag here. -->
 </head>
 <body>
@@ -33,7 +33,7 @@ def page(fname, title, desc, body, hero="", scripts=""):
 </div></main>
 <footer><div class="wrap">
 <nav aria-label="Footer"><a href="release-date.html">Release date</a><a href="launch-checklist.html">Launch checklist</a><a href="about.html">About</a><a href="privacy.html">Privacy policy</a><a href="faq.html">FAQ</a></nav>
-<p>{SITE} is an unofficial fan site. It is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. Grand Theft Auto and GTA are trademarks of Take-Two Interactive. Some links may be affiliate links, which means we may earn a small commission at no cost to you.</p>
+<p>{SITE} is an unofficial fan site. It is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. Grand Theft Auto and GTA are trademarks of Take-Two Interactive. Some links are affiliate links, which means we may earn a small commission at no cost to you. As an Amazon Associate, ViceHub earns from qualifying purchases.</p>
 </div></footer>
 {scripts}
 </body>
@@ -43,8 +43,8 @@ def page(fname, title, desc, body, hero="", scripts=""):
 AD = '<div class="ad">Ad space &middot; paste your ad unit code here</div>'
 AFF = '''<aside class="affiliate">
 <p><strong>Not pre-ordered yet?</strong> Compare prices on the standard edition for PS5 and Xbox Series X|S.</p>
-<a class="btn" href="#" rel="sponsored nofollow">Check today's price</a><br>
-<small>Replace the # with your Amazon Associates (or other store) affiliate link.</small>
+<a class="btn" href="https://www.amazon.com/s?k=grand+theft+auto+vi+ps5&amp;tag=vicehub01-20" rel="sponsored nofollow noopener">PS5 price on Amazon</a>
+<a class="btn" href="https://www.amazon.com/s?k=grand+theft+auto+vi+xbox+series+x&amp;tag=vicehub01-20" rel="sponsored nofollow noopener">Xbox price on Amazon</a>
 </aside>'''
 
 COUNT_JS = '''<script>
@@ -138,8 +138,8 @@ pages["launch-checklist.html"] = page("launch-checklist.html", "GTA 6 Launch Day
 <p>A larger SSD and a comfortable headset make a long open-world game more enjoyable.</p>
 <aside class="affiliate">
 <p><strong>Need more space?</strong> A 2TB console SSD gives you room for GTA 6 and the rest of your library.</p>
-<a class="btn" href="#" rel="sponsored nofollow">See SSD deals</a><br>
-<small>Replace the # with your affiliate link.</small>
+<a class="btn" href="https://www.amazon.com/s?k=ps5+2tb+nvme+ssd+heatsink&amp;tag=vicehub01-20" rel="sponsored nofollow noopener">See PS5 SSDs on Amazon</a>
+<a class="btn" href="https://www.amazon.com/s?k=gaming+headset+ps5+xbox&amp;tag=vicehub01-20" rel="sponsored nofollow noopener">See gaming headsets</a>
 </aside>''')
 
 pages["faq.html"] = page("faq.html", "GTA 6 FAQ: PC, Online, Price, Map | ViceHub",
@@ -171,7 +171,7 @@ pages["privacy.html"] = page("privacy.html", "Privacy Policy | ViceHub",
 <h2>Advertising</h2>
 <p>We may use third-party advertising companies, such as Google AdSense, to show ads. These companies may use cookies to show ads based on your visits to this and other websites. Google's use of advertising cookies lets it and its partners serve ads based on your visits. You can opt out of personalized advertising at <a href="https://adssettings.google.com">Google Ad Settings</a>.</p>
 <h2>Affiliate links</h2>
-<p>Some links are affiliate links. If you buy through them we may earn a commission at no extra cost to you. As an Amazon Associate we earn from qualifying purchases.</p>
+<p>Some links are affiliate links. If you buy through them we may earn a commission at no extra cost to you. As an Amazon Associate, ViceHub earns from qualifying purchases.</p>
 <h2>Analytics</h2>
 <p>We may use privacy-friendly analytics to count visits. This data is not used to identify you.</p>
 <h2>Contact</h2>
@@ -230,16 +230,16 @@ pages["index.html"] = page("index.html", "GTA 6 Release Date Countdown & Launch 
 
 # ---- Preorder comparison ----
 STORES = [
- ("Amazon", "Physical, digital code", "amazon"),
- ("Best Buy", "Physical, digital code", "bestbuy"),
- ("Walmart", "Physical", "walmart"),
- ("GameStop", "Physical, digital code", "gamestop"),
- ("PlayStation Store", "Digital (PS5)", "psstore"),
- ("Microsoft Store", "Digital (Xbox)", "xboxstore"),
+ ("Amazon", "Physical, digital code", "https://www.amazon.com/s?k=grand+theft+auto+vi&amp;tag=vicehub01-20", True),
+ ("Best Buy", "Physical, digital code", "https://www.bestbuy.com/site/searchpage.jsp?st=grand+theft+auto+vi", False),
+ ("Walmart", "Physical", "https://www.walmart.com/search?q=grand+theft+auto+vi", False),
+ ("GameStop", "Physical, digital code", "https://www.gamestop.com/search/?q=grand+theft+auto+vi", False),
+ ("PlayStation Store", "Digital (PS5)", "https://store.playstation.com/en-us/search/grand%20theft%20auto%20vi", False),
+ ("Microsoft Store", "Digital (Xbox)", "https://www.xbox.com/en-US/search/results?q=grand+theft+auto+vi", False),
 ]
 store_rows = "".join(
- f'<tr><th scope="row">{n}</th><td>{f}</td><td><a class="btn btn-sm" href="#" data-aff="{k}" rel="sponsored nofollow noopener">Check price</a></td></tr>'
- for n, f, k in STORES)
+ f'<tr><th scope="row">{n}</th><td>{f}</td><td><a class="btn btn-sm" href="{u}" rel="{"sponsored " if aff else ""}nofollow noopener">{"Check price" if aff else "Visit store"}</a></td></tr>'
+ for n, f, u, aff in STORES)
 pages["preorder.html"] = page("preorder.html", "GTA 6 Preorder: Prices, Editions & Where to Buy | ViceHub",
  "Compare GTA 6 Standard and Ultimate editions and see where to preorder for PS5 and Xbox Series X|S.",
  f'''<h1>GTA 6 preorder comparison</h1>
@@ -257,7 +257,7 @@ pages["preorder.html"] = page("preorder.html", "GTA 6 Preorder: Prices, Editions
 <div class="table-scroll"><table>
 <thead><tr><th scope="col">Store</th><th scope="col">Formats</th><th scope="col"><span class="sr">Link</span></th></tr></thead>
 <tbody>{store_rows}</tbody></table></div>
-<p class="note">Links marked "Check price" may be affiliate links. We may earn a small commission if you buy, at no extra cost to you.</p>
+<p class="note">The Amazon link is an affiliate link. If you buy through it we may earn a small commission at no extra cost to you. Other store links are not affiliate links.</p>
 <h2>Digital or physical?</h2>
 <p><strong>Digital</strong> lets you preload on November 12 and play at unlock. <strong>Physical</strong> can be resold later, but delivery may arrive after launch day unless the store offers release-day delivery.</p>
 {AFF}''')

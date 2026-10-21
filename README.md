@@ -5,7 +5,7 @@ Plain HTML + CSS. No build step. Edit any `.html` file in a text editor.
 ## Before you go live (5 min)
 1. The site lives at https://vicehub.city (domain at Porkbun, hosted free on GitHub Pages).
 2. Contact email is contact@vicehub.city (Porkbun forwards it to your Gmail).
-3. Replace each `href="#"` that has `rel="sponsored"` with your affiliate link. On `preorder.html` each store button has a label like `data-aff="amazon"` so you know which link goes where.
+3. Amazon links use Associate ID vicehub01-20 (set in .build.py). Other store buttons are plain, non-affiliate links.
 
 ## Features
 - **Countdown + verified news:** `index.html`, `news.html`. Each news item is tagged Official or Reported and links its source. Add new items at the top of the list.
