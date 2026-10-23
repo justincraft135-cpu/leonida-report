@@ -103,6 +103,21 @@ p, li { max-width: 65ch; }
   border: 1px dashed var(--line); border-radius: 6px; min-height: 90px;
   display: flex; align-items: center; justify-content: center;
 }
+/* In-content ad unit: one AdSense slot per page, placed between content boxes.
+   Until AdSense reports a filled unit, the slot takes no room and hides its
+   label, so unfilled inventory (ad blockers, unapproved domain) leaves no gap. */
+.ad-slot { margin: 0; text-align: center; }
+.ad-slot .ad-label {
+  display: none; font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--muted); margin: 0 0 6px;
+}
+.ad-slot ins { display: block; width: 100%; }
+.ad-slot:has(ins[data-ad-status="filled"]) { margin: 0 0 24px; }
+.ad-slot:has(ins[data-ad-status="filled"]) .ad-label { display: block; }
+@media (max-width: 600px) {
+  .ad-slot:has(ins[data-ad-status="filled"]) { margin-bottom: 18px; }
+}
+
 .affiliate { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 16px 18px; margin: 24px 0; }
 .affiliate p { margin: 0 0 6px; }
 .affiliate small { color: var(--muted); }

@@ -7,8 +7,17 @@ NAV = [("index.html","Home"),("news.html","News"),("preorder.html","Preorder"),(
 
 def boxed(body):
     # Each top-level h2 starts a new animated box; the intro before the first h2 gets its own box.
+    # The {AD} slot lands between boxes, outside the animated .box elements (box.js scales and fades them).
     parts = [x.strip() for x in re.split(r'(?m)^(?=<h2)', body) if x.strip()]
-    return "\n".join(f'<section class="box">\n{x}\n</section>' for x in parts)
+    out = []
+    for x in parts:
+        has_ad = AD in x
+        if has_ad:
+            x = x.replace(AD, "").strip()
+        out.append(f'<section class="box">\n{x}\n</section>')
+        if has_ad:
+            out.append(AD)
+    return "\n".join(out)
 
 def page(fname, title, desc, body, hero="", scripts=""):
     nav = "".join(f'<a href="{h}"{" aria-current=\"page\"" if h==fname else ""}>{t}</a>' for h,t in NAV)
@@ -25,7 +34,7 @@ def page(fname, title, desc, body, hero="", scripts=""):
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Work+Sans:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=7">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5385328860791776" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -47,7 +56,16 @@ def page(fname, title, desc, body, hero="", scripts=""):
 </html>
 '''
 
-AD = ''  # AdSense Auto ads places ads itself; no visible placeholder boxes
+AD = '''<aside class="ad-slot" aria-label="Advertisement">
+<span class="ad-label">Advertisement</span>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="fluid"
+     data-ad-layout-key="-fb+5w+4e-db+86"
+     data-ad-client="ca-pub-5385328860791776"
+     data-ad-slot="5319581684"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</aside>'''  # One in-content ad per page; {AD} markers decide where it goes
 AFF = '''<aside class="affiliate">
 <p><strong>Not pre-ordered yet?</strong> Compare prices on the standard edition for PS5 and Xbox Series X|S.</p>
 <a class="btn" href="https://www.amazon.com/s?k=grand+theft+auto+vi+ps5&amp;tag=vicehub01-20" rel="sponsored nofollow noopener">PS5 price on Amazon</a>
@@ -240,6 +258,7 @@ pages["trailers.html"] = page("trailers.html", "GTA 6 Trailers: Every Official T
  "Watch every official GTA 6 trailer from Rockstar Games: the launch trailer, An Extended Look, Trailer 2 and Trailer 1.",
  f'''<h1>Every official GTA 6 trailer</h1>
 <p>All videos below are played straight from <a href="https://www.youtube.com/@RockstarGames" rel="noopener">Rockstar Games' official YouTube channel</a>. Oldest first, newest at the bottom.</p>
+{AD}
 <h2>Trailer 1</h2>
 <p class="updated">Released December 2023</p>
 <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/QdBZY2fkU-0" title="Grand Theft Auto VI Trailer 1 (Rockstar Games on YouTube)" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
@@ -273,15 +292,16 @@ pages["faq.html"] = page("faq.html", "GTA 6 FAQ: PC, Online, Price, Map | ViceHu
 
 pages["about.html"] = page("about.html", "About | ViceHub",
  "About ViceHub, an unofficial GTA 6 fan site.",
- '''<h1>About ViceHub</h1>
+ f'''<h1>About ViceHub</h1>
 <p>ViceHub is an independent fan site that collects GTA 6 news, release info and guides in one easy place. We are fans, not Rockstar.</p>
 <p>All facts are checked against public reports and Rockstar's own announcements, and each page shows when it was last updated.</p>
+{AD}
 <h2>Contact</h2>
 <p>Email: <strong>contact@vicehub.city</strong></p>''')
 
 pages["privacy.html"] = page("privacy.html", "Privacy Policy | ViceHub",
  "Privacy policy for ViceHub.",
- '''<h1>Privacy policy</h1>
+ f'''<h1>Privacy policy</h1>
 <p class="updated">Effective October 20, 2026</p>
 <p>This site does not ask you to create an account or submit personal information.</p>
 <h2>Advertising</h2>
@@ -292,7 +312,8 @@ pages["privacy.html"] = page("privacy.html", "Privacy Policy | ViceHub",
 <h2>Analytics</h2>
 <p>We may use privacy-friendly analytics to count visits. This data is not used to identify you.</p>
 <h2>Contact</h2>
-<p>Questions? Email contact@vicehub.city.</p>''')
+<p>Questions? Email contact@vicehub.city.</p>
+{AD}''')
 
 
 # ---- Verified announcements ----
