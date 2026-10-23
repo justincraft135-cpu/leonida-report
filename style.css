@@ -204,22 +204,21 @@ body::after {
   content: ""; position: fixed; inset: auto 0 0 0; height: 220px; z-index: -1; pointer-events: none;
   background: url("scene.svg?v=1") center bottom / auto 100% repeat-x; opacity: .22;
 }
-.hero { position: relative; overflow: hidden; isolation: isolate; }
-.hero::before {
-  content: ""; position: absolute; z-index: -1; right: 6%; bottom: 40px;
-  width: min(42vw, 320px); aspect-ratio: 1; border-radius: 50%;
-  background: linear-gradient(180deg, #ffe56b 0%, #ff9a4d 45%, #ff3fa4 100%);
-  -webkit-mask: linear-gradient(#000 50%, transparent 50%), repeating-linear-gradient(180deg, #000 0 12px, transparent 12px 19px);
-  mask: linear-gradient(#000 50%, transparent 50%), repeating-linear-gradient(180deg, #000 0 12px, transparent 12px 19px);
-  opacity: .85; filter: drop-shadow(0 0 40px rgba(255, 63, 164, .6));
-}
-.hero::after {
-  content: ""; position: absolute; z-index: -1; inset: auto 0 0 0; height: 150px; pointer-events: none;
-  background: url("scene.svg?v=1") center bottom / auto 100% repeat-x;
+.hero {
+  position: relative; overflow: hidden; isolation: isolate;
+  background:
+    linear-gradient(90deg, rgba(18, 15, 36, .82) 0%, rgba(18, 15, 36, .55) 45%, rgba(18, 15, 36, .1) 100%),
+    url("hero.jpg?v=1") center 45% / cover no-repeat,
+    #2a1650;
 }
 .hero .wrap { position: relative; padding-bottom: 120px; }
-.hero h1, .hero p.lede { text-shadow: 0 2px 12px rgba(18, 15, 36, .55); }
-@media (max-width: 600px) { .hero::after { height: 110px; } .hero .wrap { padding-bottom: 90px; } .hero::before { bottom: 30px; } }
+.hero h1, .hero p.lede { text-shadow: 0 2px 12px rgba(18, 15, 36, .7); }
+@media (max-width: 600px) {
+  .hero { background:
+    linear-gradient(180deg, rgba(18, 15, 36, .75) 0%, rgba(18, 15, 36, .45) 60%, rgba(18, 15, 36, .2) 100%),
+    url("hero.jpg?v=1") 60% 30% / cover no-repeat, #2a1650; }
+  .hero .wrap { padding-bottom: 90px; }
+}
 
 /* Animated section boxes (box.js scales them by distance from the middle of the screen). */
 .box {

@@ -34,7 +34,7 @@ def page(fname, title, desc, body, hero="", scripts=""):
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Work+Sans:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="style.css?v=7">
+<link rel="stylesheet" href="style.css?v=8">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5385328860791776" crossorigin="anonymous"></script>
 </head>
 <body>
