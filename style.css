@@ -71,7 +71,8 @@ h1 { font-family: var(--display); font-weight: 400; font-size: clamp(30px, 6vw, 
 .countdown small { text-transform: uppercase; letter-spacing: .12em; font-size: 11px; color: #ffd9e8; }
 
 /* Content */
-main .wrap { padding-block: 32px 48px; }
+main.shell { display: grid; grid-template-columns: minmax(0, 1fr); padding-block: 32px 48px; }
+main.shell > .wrap { width: 100%; }
 main h2 { font-family: var(--display); font-weight: 400; font-size: 24px; color: var(--sunset); margin: 40px 0 12px; }
 main h2:first-child { margin-top: 0; }
 main h3 { font-size: 19px; margin: 24px 0 6px; }
@@ -103,19 +104,31 @@ p, li { max-width: 65ch; }
   border: 1px dashed var(--line); border-radius: 6px; min-height: 90px;
   display: flex; align-items: center; justify-content: center;
 }
-/* In-content ad unit: one AdSense slot per page, placed between content boxes.
-   Until AdSense reports a filled unit, the slot takes no room and hides its
-   label, so unfilled inventory (ad blockers, unapproved domain) leaves no gap. */
+/* Ad unit: one AdSense slot per page, shown in the side rail instead of between
+   the content boxes. Until AdSense reports a filled unit, the slot takes no room
+   and hides its label, so unfilled inventory (ad blockers, unapproved domain)
+   leaves no gap. */
 .ad-slot { margin: 0; text-align: center; }
 .ad-slot .ad-label {
   display: none; font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
   color: var(--muted); margin: 0 0 6px;
 }
 .ad-slot ins { display: block; width: 100%; }
-.ad-slot:has(ins[data-ad-status="filled"]) { margin: 0 0 24px; }
 .ad-slot:has(ins[data-ad-status="filled"]) .ad-label { display: block; }
-@media (max-width: 600px) {
-  .ad-slot:has(ins[data-ad-status="filled"]) { margin-bottom: 18px; }
+
+/* Side rail: the ad sits in a sticky column beside the reading column, so it
+   never breaks up the run of section boxes. Narrow screens have no side room,
+   so there the rail follows the content instead of interrupting it. */
+.rail {
+  width: 100%; max-width: 760px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (min-width: 1280px) {
+  main.shell { grid-template-columns: minmax(0, 1fr) minmax(0, 760px) minmax(0, 1fr); }
+  main.shell > .wrap { grid-column: 2; }
+  .rail { grid-column: 3; max-width: none; margin: 0; padding: 0 0 0 28px; }
+  .rail-inner { max-width: 300px; margin: 0; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 84px); }
 }
 
 .affiliate { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 16px 18px; margin: 24px 0; }
