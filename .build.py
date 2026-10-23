@@ -7,16 +7,13 @@ NAV = [("index.html","Home"),("news.html","News"),("preorder.html","Preorder"),(
 
 def boxed(body):
     # Each top-level h2 starts a new animated box; the intro before the first h2 gets its own box.
-    # The {AD} slot lands between boxes, outside the animated .box elements (box.js scales and fades them).
+    # The {AD} marker is only a placeholder in the page bodies: the ad itself is pulled out of the
+    # content flow and rendered once in the side rail (see page()), so it never splits the boxes.
     parts = [x.strip() for x in re.split(r'(?m)^(?=<h2)', body) if x.strip()]
     out = []
     for x in parts:
-        has_ad = AD in x
-        if has_ad:
-            x = x.replace(AD, "").strip()
+        x = x.replace(AD, "").strip()
         out.append(f'<section class="box">\n{x}\n</section>')
-        if has_ad:
-            out.append(AD)
     return "\n".join(out)
 
 def page(fname, title, desc, body, hero="", scripts=""):
@@ -34,7 +31,7 @@ def page(fname, title, desc, body, hero="", scripts=""):
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Work+Sans:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="style.css?v=8">
+<link rel="stylesheet" href="style.css?v=9">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5385328860791776" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -43,9 +40,11 @@ def page(fname, title, desc, body, hero="", scripts=""):
 <nav class="nav" aria-label="Main">{nav}</nav>
 </div></header>
 {hero}
-<main><div class="wrap">
+<main class="shell"><div class="wrap">
 {boxed(body)}
-</div></main>
+</div>
+{RAIL}
+</main>
 <footer><div class="wrap">
 <nav aria-label="Footer"><a href="release-date.html">Release date</a><a href="launch-checklist.html">Launch checklist</a><a href="gta-6-file-size.html">File size</a><a href="gta-6-map-size.html">Map size</a><a href="gta-6-characters.html">Characters</a><a href="about.html">About</a><a href="privacy.html">Privacy policy</a><a href="faq.html">FAQ</a></nav>
 <p>{SITE} is an unofficial fan site. It is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. Grand Theft Auto and GTA are trademarks of Take-Two Interactive. Some links are affiliate links, which means we may earn a small commission at no cost to you. As an Amazon Associate, ViceHub earns from qualifying purchases.</p>
@@ -56,16 +55,18 @@ def page(fname, title, desc, body, hero="", scripts=""):
 </html>
 '''
 
-AD = '''<aside class="ad-slot" aria-label="Advertisement">
-<span class="ad-label">Advertisement</span>
+AD = '''<span class="ad-label">Advertisement</span>
 <ins class="adsbygoogle"
      style="display:block"
      data-ad-format="fluid"
      data-ad-layout-key="-fb+5w+4e-db+86"
      data-ad-client="ca-pub-5385328860791776"
      data-ad-slot="5319581684"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</aside>'''  # One in-content ad per page; {AD} markers decide where it goes
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>'''  # One ad per page, shown in the side rail
+
+RAIL = f'''<aside class="rail" aria-label="Advertisement"><div class="ad-slot rail-inner">
+{AD}
+</div></aside>'''
 AFF = '''<aside class="affiliate">
 <p><strong>Not pre-ordered yet?</strong> Compare prices on the standard edition for PS5 and Xbox Series X|S.</p>
 <a class="btn" href="https://www.amazon.com/s?k=grand+theft+auto+vi+ps5&amp;tag=vicehub01-20" rel="sponsored nofollow noopener">PS5 price on Amazon</a>
